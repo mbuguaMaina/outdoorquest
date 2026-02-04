@@ -5,29 +5,29 @@ import { Metadata } from "next";
 const values = [
   {
     icon: Heart,
-    title: "Love in Every Toy",
-    description: "Each product is designed with love and care to bring maximum joy.",
+    title: "Passion for Play",
+    description: "We are passionate about gaming and the outdoors, just like you.",
     color: "text-destructive",
     bgColor: "bg-destructive/10",
   },
   {
     icon: Shield,
-    title: "Safety First",
-    description: "All toys meet strict safety standards for worry-free play.",
+    title: "Safety & Quality",
+    description: "All products meet strict safety standards and premium quality checks.",
     color: "text-accent",
     bgColor: "bg-accent/10",
   },
   {
     icon: Sparkles,
-    title: "Spark Imagination",
-    description: "We create toys that fuel creativity and endless adventures.",
+    title: "Innovation",
+    description: "We constantly seek the newest and best gear for your adventures.",
     color: "text-primary",
     bgColor: "bg-primary/10",
   },
   {
     icon: Target,
-    title: "Quality Focused",
-    description: "Premium materials and construction that lasts for years.",
+    title: "Performance Focused",
+    description: "Gear that helps you perform at your best, in-game or outside.",
     color: "text-secondary",
     bgColor: "bg-secondary/10",
   },
@@ -79,9 +79,7 @@ const About = () => {
             About <span className="text-primary">OutDoorQuest</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Since 2022, we&apos;ve been on a mission to bring joy to children around the country 
-            through carefully curated, safe, and educational toys that spark imagination 
-            and create lasting memories.
+          Since 2022, we’ve been on a mission to bring joy to children around the country through carefully curated Gaming and Outdoor experiences that spark imagination and create lasting memories.
           </p>
         </div>
       </section>
@@ -98,12 +96,10 @@ const About = () => {
                 From a Small Dream to a <span className="text-destructive">Big Adventure</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-            OutDoorQuest started  with a simple mission: to bring joy to every child through toys that are fun, safe, and educational. Driven by a passion for seeing children happy, we aim to create a world where every child can experience the wonder and excitement that the right toys can inspire
-              </p>
+ OutDoorQuest started with a simple mission: to provide the best equipment for both digital and physical explorers. Whether you&apos;re conquering a virtual world or climbing a real mountain, we believe in having the right gear. Driven by a passion for adventure, we aim to create a community where everyone can experience the thrill of the quest. 
+          </p>
               <p className="text-muted-foreground leading-relaxed">
-                Today, we&apos;ve grown into a beloved brand trusted by thousands of families 
-                countrywide. But our core mission remains the same – to bring smiles to 
-                children&apos;s faces while giving parents peace of mind.
+                Today, we’ve grown into a beloved brand trusted by thousands of families nationwide. Yet our core mission remains the same – to bring smiles to children’s faces through fun gaming and outdoor adventures, while giving parents peace of mind.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="bg-muted rounded-2xl p-4 text-center">
@@ -202,10 +198,10 @@ const About = () => {
       <section className="py-16 md:py-24 bg-linear-to-r from-secondary via-purple to-pink">
         <div className="container mx-auto px-4 text-center text-white">
           <h2 className="text-3xl md:text-4xl font-fredoka font-bold mb-4">
-            Ready to Explore Our Toys?
+           Ready to Explore Our Games & Outdoor Adventures?
           </h2>
           <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
-            Join thousands of happy families and discover the perfect toy for your little one!
+            Join thousands of families and spark fun, games, and outdoor adventures for your kids!
           </p>
           <a
             href="/products"

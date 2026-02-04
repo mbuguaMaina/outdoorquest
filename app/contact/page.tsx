@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Contact from "./contactcomp";
 export const metadata: Metadata = {
   title: "OutDoorQuest - Contact",
-  description: "Contact OutDoorQuest for any inquiries, feedback, or support. We are here to help you with your outdoor toy needs.",
+  description: "Contact OutDoorQuest for any inquiries, feedback, or support. We are here to help you with your gaming and outdoor gear needs.",
   keywords: ["OutDoorQuest", "contact", "inquiries", "feedback", "support"],
   robots: {
     index: true,
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "OutDoorQuest - Contact",
-    description: "Contact OutDoorQuest for any inquiries, feedback, or support. We are here to help you with your outdoor toy needs.",
+    description: "Contact OutDoorQuest for any inquiries, feedback, or support. We are here to help you with your gaming and outdoor gear needs.",
     images: [
       {
         url: "https://outdoorquest.vercel.app/images/og-image.png",

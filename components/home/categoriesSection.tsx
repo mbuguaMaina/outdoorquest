@@ -1,43 +1,43 @@
- 
-import { BookOpen, Trees, Heart, Puzzle } from "lucide-react";
+
+import { Gamepad2, Tent, Headphones, Castle } from "lucide-react";
 import Link from "next/link";
 
 const categories = [
   {
-    id: "educational",
-    name: "Educational",
-    description: "Learn while having fun!",
-    icon: BookOpen,
+    id: "kids-gaming",
+    name: "Kids Gaming",
+    description: "Fun & safe controls",
+    icon: Gamepad2,
     color: "bg-secondary",
-    emoji: "📚",
+    emoji: "🎮",
     borderColor: "border-secondary",
   },
   {
-    id: "outdoor",
-    name: "Outdoor Fun",
-    description: "Adventures await outside!",
-    icon: Trees,
+    id: "inflatables",
+    name: "Inflatable Bouncers",
+    description: "Jump & play!",
+    icon: Castle,
+    color: "bg-primary",
+    emoji: "🏰",
+    borderColor: "border-primary",
+  },
+  {
+    id: "play-tents",
+    name: "Play Tents",
+    description: "Indoor/outdoor forts",
+    icon: Tent,
     color: "bg-accent",
-    emoji: "🌳",
+    emoji: "⛺",
     borderColor: "border-accent",
   },
   {
-    id: "plush",
-    name: "Plush & Soft",
-    description: "Cuddly friends for all!",
-    icon: Heart,
+    id: "audio-kids",
+    name: "Audio For Kids",
+    description: "Comfy headsets",
+    icon: Headphones,
     color: "bg-pink",
-    emoji: "🧸",
+    emoji: "🎧",
     borderColor: "border-pink",
-  },
-  {
-    id: "general",
-    name: "General Toys",
-    description: "Classic fun for everyone!",
-    icon: Puzzle,
-    color: "bg-primary",
-    emoji: "🎯",
-    borderColor: "border-primary",
   },
 ];
 
@@ -54,8 +54,7 @@ const CategoriesSection = () => {
             Explore Our <span className="text-primary">Categories</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            From educational wonders to outdoor adventures, find the perfect toy
-            for every child&apos;s imagination!
+          Whether it’s high-performance gaming gear or rugged outdoor equipment, find the perfect tools to fuel your passion!
           </p>
         </div>
 
@@ -68,7 +67,7 @@ const CategoriesSection = () => {
               className="group"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`card-toy border-2 ${category.borderColor} h-full`}>
+              <div className={`card-product border-2 ${category.borderColor} h-full`}>
                 <div className="flex flex-col items-center text-center p-6 space-y-4">
                   {/* Icon Circle */}
                   <div className={`${category.color} w-20 h-20 rounded-full flex items-center justify-center group-hover:animate-wiggle transition-transform shadow-lg`}>

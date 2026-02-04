@@ -1,20 +1,21 @@
 import CategoriesSection from "@/components/home/categoriesSection";
 import HeroSection from "@/components/home/HeroSection";
 import NewsletterSection from "@/components/home/newslettersection";
-import PopularToysSection from "@/components/home/populartoysection";
+import PopularProductsSection from "@/components/home/popularproductssection";
 import WhyChooseUsSection from "@/components/home/whychooseus";
 import { Metadata } from "next";
+
 export const metadata: Metadata = {
-  title: "OutDoorQuest - Home",
-  description: "OutDoorQuest is a brand that specializes in providing safe and educational toys for children. We believe that every child deserves access to toys that are not only fun but also safe and educational. Our mission is to bring smiles to children&apos;s faces while giving parents peace of mind.",
-  keywords: ["OutDoorQuest", "toys", "children", "safety", "education"],
+  title: "OutDoorQuest - Gaming & Outdoor Gear",
+  description: "OutDoorQuest is your premier destination for gaming gear and outdoor products. We provide high-quality equipment for adventures both digital and physical.",
+  keywords: ["OutDoorQuest", "gaming", "outdoor", "gear", "adventure"],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "OutDoorQuest - Home",
-    description: "OutDoorQuest is a brand that specializes in providing safe and educational toys for children. We believe that every child deserves access to toys that are not only fun but also safe and educational. Our mission is to bring smiles to children&apos;s faces while giving parents peace of mind.",
+    title: "OutDoorQuest - Gaming & Outdoor Gear",
+    description: "OutDoorQuest is your premier destination for gaming gear and outdoor products. We provide high-quality equipment for adventures both digital and physical.",
     images: [
       {
         url: "https://outdoorquest.vercel.app/images/og-image.png",
@@ -32,7 +33,7 @@ const Index = () => {
       <HeroSection />
       <CategoriesSection />
       <WhyChooseUsSection />
-      <PopularToysSection />
+      <PopularProductsSection />
       <NewsletterSection />
     </>
   );

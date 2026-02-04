@@ -7,41 +7,39 @@ import { Star, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useSearchParams } from "next/navigation";
 
-// Toy Data
-const allToys = [
-  { id: 1, name: "Rainbow Stacking Blocks", category: "educational", ageRange: "2-5", emoji: "🧱", rating: 4.9, description: "Colorful blocks for learning shapes and colors" },
-  { id: 2, name: "Space Explorer Kit", category: "educational", ageRange: "6-12", emoji: "🚀", rating: 4.9, description: "Complete astronomy set for young scientists" },
-  { id: 3, name: "Alphabet Train", category: "educational", ageRange: "2-4", emoji: "🚂", rating: 4.7, description: "Learn letters while building trains" },
-  { id: 4, name: "Math Puzzle Set", category: "educational", ageRange: "5-8", emoji: "🔢", rating: 4.8, description: "Fun way to practice math skills" },
-  { id: 5, name: "Science Lab Kit", category: "educational", ageRange: "7-12", emoji: "🔬", rating: 4.9, description: "50+ experiments for curious minds" },
-  { id: 6, name: "World Map Puzzle", category: "educational", ageRange: "4-10", emoji: "🗺️", rating: 4.6, description: "Learn geography through play" },
-  { id: 7, name: "Adventure Bicycle", category: "outdoor", ageRange: "5-10", emoji: "🚲", rating: 4.8, description: "Perfect first bike with training wheels" },
-  { id: 8, name: "Soccer Champion Ball", category: "outdoor", ageRange: "3-12", emoji: "⚽", rating: 4.8, description: "Professional quality for young athletes" },
-  { id: 9, name: "Kite Flying Set", category: "outdoor", ageRange: "4-10", emoji: "🪁", rating: 4.5, description: "Easy-to-fly colorful kites" },
-  { id: 10, name: "Garden Explorer Kit", category: "outdoor", ageRange: "4-8", emoji: "🌻", rating: 4.7, description: "Plant your own garden adventure" },
-  { id: 11, name: "Water Splash Toys", category: "outdoor", ageRange: "3-10", emoji: "💦", rating: 4.6, description: "Summer fun water activities" },
-  { id: 12, name: "Camping Adventure Set", category: "outdoor", ageRange: "6-12", emoji: "⛺", rating: 4.8, description: "Everything for backyard camping" },
-  { id: 13, name: "Cuddly Bear Friend", category: "plush", ageRange: "0-8", emoji: "🧸", rating: 5.0, description: "Super soft and huggable bear" },
-  { id: 14, name: "Unicorn Dream Buddy", category: "plush", ageRange: "2-10", emoji: "🦄", rating: 4.9, description: "Magical unicorn with rainbow mane" },
-  { id: 15, name: "Dinosaur Plushie", category: "plush", ageRange: "1-6", emoji: "🦕", rating: 4.7, description: "Friendly dino for prehistoric adventures" },
-  { id: 16, name: "Bunny Snuggle Pal", category: "plush", ageRange: "0-5", emoji: "🐰", rating: 4.9, description: "Perfect bedtime companion" },
-  { id: 17, name: "Penguin Family Set", category: "plush", ageRange: "2-8", emoji: "🐧", rating: 4.8, description: "Set of 3 adorable penguins" },
-  { id: 18, name: "Elephant Cuddle Toy", category: "plush", ageRange: "0-6", emoji: "🐘", rating: 4.8, description: "Large and extra cuddly" },
-  { id: 19, name: "Art Studio Set", category: "general", ageRange: "4-10", emoji: "🎨", rating: 4.7, description: "Complete art supplies for creativity" },
-  { id: 20, name: "Building Bricks Mega Set", category: "general", ageRange: "4-12", emoji: "🏗️", rating: 4.9, description: "1000+ pieces for endless building" },
-  { id: 21, name: "Musical Instruments Kit", category: "general", ageRange: "3-8", emoji: "🎵", rating: 4.6, description: "Start a mini band at home" },
-  { id: 22, name: "Remote Control Car", category: "general", ageRange: "6-12", emoji: "🚗", rating: 4.8, description: "High-speed racing fun" },
-  { id: 23, name: "Dollhouse Deluxe", category: "general", ageRange: "3-10", emoji: "🏠", rating: 4.7, description: "3-story furnished dollhouse" },
-  { id: 24, name: "Magic Trick Set", category: "general", ageRange: "6-12", emoji: "🎩", rating: 4.5, description: "Learn amazing magic tricks" },
+// Product Data
+const allProducts = [
+  { id: 1, name: "Kids Gaming Headset", category: "gaming", ageRange: "6+", emoji: "🎧", rating: 4.9, description: "Lightweight, volume-limited headset for kids" },
+  { id: 2, name: "Bounceland Bounce House Castle", category: "outdoor", ageRange: "3+", emoji: "🏰", rating: 4.9, description: "Inflatable castle with blower for backyard fun" },
+  { id: 3, name: "Junior Game Controller", category: "gaming", ageRange: "6+", emoji: "🕹️", rating: 5.0, description: "Ergonomic controller sized for small hands" },
+  { id: 4, name: "Play Tent Teepee", category: "outdoor", ageRange: "3+", emoji: "⛺", rating: 4.8, description: "Indoor/outdoor teepee for imaginative play" },
+  { id: 5, name: "RGB Kids Keyboard", category: "gaming", ageRange: "6+", emoji: "⌨️", rating: 4.7, description: "Quiet keys and fun lighting for kids" },
+  { id: 6, name: "Foam Ball Pit Set", category: "outdoor", ageRange: "3+", emoji: "🎪", rating: 4.8, description: "Soft play pit with colorful balls" },
+  { id: 7, name: "Kids Gaming Chair", category: "gaming", ageRange: "6+", emoji: "💺", rating: 4.6, description: "Supportive mini chair for gaming sessions" },
+  { id: 8, name: "Pop-Up Play Tunnel", category: "outdoor", ageRange: "3+", emoji: "🌀", rating: 4.7, description: "Foldable tunnel for active fun" },
+  { id: 9, name: "Kid-Safe Monitor", category: "gaming", ageRange: "6+", emoji: "🖥️", rating: 4.8, description: "Low blue-light display for safer viewing" },
+  { id: 10, name: "Princess Playhouse", category: "outdoor", ageRange: "3+", emoji: "🏡", rating: 4.8, description: "Decorative playhouse for indoor and outdoor play" },
+  { id: 11, name: "Console Controller (Kids)", category: "gaming", ageRange: "6+", emoji: "🎮", rating: 4.8, description: "Wireless controller with safety grip" },
+  { id: 12, name: "Sleeping Bag (Kids)", category: "outdoor", ageRange: "3+", emoji: "🛌", rating: 4.7, description: "Cozy sleeping bag sized for kids" },
+  { id: 13, name: "Streaming Mic (Kids)", category: "gaming", ageRange: "8+", emoji: "🎙️", rating: 4.6, description: "Kid-friendly mic for voice chat and streaming" },
+  { id: 14, name: "Outdoor Play Mat", category: "outdoor", ageRange: "3+", emoji: "🧩", rating: 4.8, description: "Soft interlocking mats for safe play" },
+  { id: 15, name: "VR Viewer (Kids)", category: "gaming", ageRange: "8+", emoji: "🕶️", rating: 4.7, description: "Simplified viewer for educational experiences" },
+  { id: 16, name: "Toddler Trampoline", category: "outdoor", ageRange: "3+", emoji: "🤸", rating: 4.7, description: "Mini trampoline with safety bar" },
+  { id: 17, name: "Gaming Desk (Kids)", category: "gaming", ageRange: "6+", emoji: "🔲", rating: 4.5, description: "Compact desk with cable management" },
+  { id: 18, name: "LED Night Lantern", category: "outdoor", ageRange: "3+", emoji: "🏮", rating: 4.6, description: "Rechargeable lantern for bedtime forts" },
+  { id: 19, name: "Capture Card (Kids)", category: "gaming", ageRange: "8+", emoji: "📹", rating: 4.5, description: "Simple capture for beginner streaming" },
+  { id: 20, name: "Water Play Table", category: "outdoor", ageRange: "3+", emoji: "💧", rating: 4.6, description: "Outdoor table for splashing fun" },
+  { id: 21, name: "Webcam 1080p (Kids)", category: "gaming", ageRange: "All Ages", emoji: "📷", rating: 4.5, description: "Automatic light adjustment for video calls" },
+  { id: 22, name: "Explorer Binoculars (Kids)", category: "outdoor", ageRange: "5+", emoji: "🔭", rating: 4.7, description: "Durable binoculars for nature watching" },
+  { id: 23, name: "Cooling Pad (Kids Laptops)", category: "gaming", ageRange: "All Ages", emoji: "❄️", rating: 4.4, description: "Quiet cooling for compact devices" },
+  { id: 24, name: "Hammock (Kids)", category: "outdoor", ageRange: "3+", emoji: "🧶", rating: 4.8, description: "Cozy hammock for backyard naps" },
 ];
 
 // Category Colors
 const categoryColors: Record<string, { border: string; bg: string; text: string }> = {
   all: { border: "border-primary", bg: "bg-primary", text: "text-primary" },
-  educational: { border: "border-secondary", bg: "bg-secondary", text: "text-secondary" },
+  gaming: { border: "border-secondary", bg: "bg-secondary", text: "text-secondary" },
   outdoor: { border: "border-accent", bg: "bg-accent", text: "text-accent" },
-  plush: { border: "border-pink", bg: "bg-pink", text: "text-pink" },
-  general: { border: "border-orange", bg: "bg-orange", text: "text-orange" },
 };
 
 // Inner Products Component
@@ -56,12 +54,12 @@ const ProductsContent = () => {
     setSearchQuery(query);
   }, [query]);
 
-  const filteredToys = allToys.filter((toy) => {
+  const filteredProducts = allProducts.filter((product) => {
     const matchesSearch =
-      toy.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      toy.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      toy.category.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = activeCategory === "all" || toy.category === activeCategory;
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = activeCategory === "all" || product.category === activeCategory;
     return matchesSearch && matchesCategory;
   });
 
@@ -71,13 +69,13 @@ const ProductsContent = () => {
       <section className="py-12 md:py-16 bg-linear-to-br from-secondary/20 via-background to-purple/20">
         <div className="container mx-auto px-4 text-center">
           <span className="inline-block bg-secondary/20 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            🎁 Our Collection
+            🎮 Our Collection
           </span>
           <h1 className="text-4xl md:text-5xl font-fredoka font-bold mb-4">
-            Explore Our <span className="text-secondary">Toys</span>
+            Explore Our <span className="text-secondary">Products</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover hundreds of carefully selected toys that bring joy, learning, and adventure to children of all ages!
+            Explore a curated collection of gaming gear and outdoor adventures that bring fun, excitement, and performance!
           </p>
         </div>
       </section>
@@ -91,7 +89,7 @@ const ProductsContent = () => {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 type="text"
-                placeholder="Search toys..."
+                placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 rounded-full border-2 border-border focus:border-primary"
@@ -99,29 +97,11 @@ const ProductsContent = () => {
             </div>
 
             {/* Category Tabs */}
-            <Tabs
-              value={activeCategory}
-              onValueChange={setActiveCategory}
-              className="w-full overflow-x-hidden rounded-full md:w-auto"
-            >
-              <TabsList className="grid grid-cols-5 gap-1 bg-muted p-1 w-max overflow-x-auto">
-                {["all", "educational", "outdoor", "plush", "general"].map((cat) => (
-                  <TabsTrigger
-                    key={cat}
-                    value={cat}
-                    className={`rounded-full data-[state=active]:bg-${categoryColors[cat].bg} data-[state=active]:text-${categoryColors[cat].text}`}
-                  >
-                    {cat === "educational"
-                      ? "📚 Learn"
-                      : cat === "outdoor"
-                      ? "🌳 Outdoor"
-                      : cat === "plush"
-                      ? "🧸 Plush"
-                      : cat === "general"
-                      ? "🎯 General"
-                      : "All"}
-                  </TabsTrigger>
-                ))}
+            <Tabs defaultValue="all" value={activeCategory} onValueChange={setActiveCategory} className="w-full md:w-auto">
+              <TabsList className="bg-muted/50 p-1 rounded-full w-full md:w-auto overflow-x-auto justify-start">
+                <TabsTrigger value="all" className="rounded-full px-6">All</TabsTrigger>
+                <TabsTrigger value="gaming" className="rounded-full px-6">Gaming</TabsTrigger>
+                <TabsTrigger value="outdoor" className="rounded-full px-6">Outdoor</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
@@ -129,70 +109,72 @@ const ProductsContent = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="py-12 md:py-16 bg-muted/30">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <p className="text-muted-foreground mb-6">
-            Showing <span className="font-bold text-foreground">{filteredToys.length}</span> toys
-          </p>
-
-          {filteredToys.length === 0 ? (
-            <div className="text-center py-16">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-fredoka font-bold mb-2">No toys found</h3>
-              <p className="text-muted-foreground">Try adjusting your search or filters</p>
-            </div>
-          ) : (
+          {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredToys.map((toy) => {
-                const colors = categoryColors[toy.category];
+              {filteredProducts.map((product, index) => {
+                const colors = categoryColors[product.category] || categoryColors.all;
                 return (
                   <div
-                    key={toy.id}
-                    className={`card-toy border-2 ${colors.border} rounded-md overflow-hidden group`}
+                    key={product.id}
+                    className={`group bg-card rounded-3xl overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${colors.border}`}
+                    style={{ animationDelay: `${index * 0.05}s` }}
                   >
-                    <div className={`${colors.bg}/20 p-8 flex items-center justify-center`}>
-                      <span className="text-6xl group-hover:animate-bounce transition-transform">{toy.emoji}</span>
+                    {/* Image Area */}
+                    <div className={`aspect-square ${colors.bg}/10 flex items-center justify-center p-8 relative overflow-hidden`}>
+                      <div className="text-8xl transform group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl filter">
+                        {product.emoji}
+                      </div>
+                      <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold shadow-xs">
+                        {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
+                      </div>
                     </div>
 
-                    <div className="p-4 space-y-2">
-                      <div className="flex items-center justify-between">
-                        <span
-                          className={`text-xs font-semibold px-2 py-1 rounded-full ${colors.bg}/10 ${colors.text} capitalize`}
-                        >
-                          {toy.category}
-                        </span>
-                        <div className="flex items-center gap-1">
-                          <Star className="h-4 w-4 text-primary fill-primary" />
-                          <span className="text-sm font-semibold">{toy.rating}</span>
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="font-fredoka text-lg font-bold line-clamp-1 group-hover:text-primary transition-colors">
+                          {product.name}
+                        </h3>
+                        <div className="flex items-center gap-1 text-orange text-sm font-bold bg-orange/10 px-2 py-0.5 rounded-full">
+                          <Star className="h-3 w-3 fill-current" />
+                          <span>{product.rating}</span>
                         </div>
                       </div>
-
-                      <h3 className="font-fredoka text-lg font-bold text-foreground group-hover:text-primary transition-colors line-clamp-1">
-                        {toy.name}
-                      </h3>
-
-                      <p className="text-sm text-muted-foreground line-clamp-2">{toy.description}</p>
-
-                      <p className="text-sm text-muted-foreground flex items-center gap-2">
-                        <span>👶</span>Ages {toy.ageRange} years
+                      
+                      <p className="text-muted-foreground text-sm line-clamp-2 mb-4 h-10">
+                        {product.description}
                       </p>
 
-                      <Button
-                        asChild
-                        className={`w-full mt-2 btn-playful ${colors.bg}/10 ${colors.text} hover:${colors.bg} hover:text-white`}
-                      >
-                        <a
-                          href={`https://wa.me/+254758929927?text=Halo%20OutDoorQuest,do you still have this toy ${toy.name}?`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Buy on Whatsapp
-                        </a>
-                      </Button>
+                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
+                        <span className="text-xs font-semibold text-muted-foreground bg-muted px-2 py-1 rounded-md">
+                          Age: {product.ageRange}
+                        </span>
+                        <Button size="sm" className={`rounded-full ${colors.bg} ${colors.text} bg-opacity-20 hover:bg-opacity-30 border-0`}>
+                          Details
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 );
               })}
+            </div>
+          ) : (
+            <div className="text-center py-20">
+              <div className="text-6xl mb-4">🔍</div>
+              <h3 className="text-2xl font-bold mb-2">No products found</h3>
+              <p className="text-muted-foreground">Try adjusting your search or category filter</p>
+              <Button 
+                variant="outline" 
+                className="mt-6"
+                onClick={() => {
+                  setSearchQuery("");
+                  setActiveCategory("all");
+                }}
+              >
+                Clear Filters
+              </Button>
             </div>
           )}
         </div>
@@ -201,16 +183,9 @@ const ProductsContent = () => {
   );
 };
 
-// Suspense Wrapper
 const Products = () => {
   return (
-    <Suspense
-      fallback={
-        <div className="flex items-center justify-center h-96">
-          <div className="w-12 h-12 animate-spin border-4 border-primary border-t-transparent rounded-full" />
-        </div>
-      }
-    >
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
       <ProductsContent />
     </Suspense>
   );

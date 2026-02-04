@@ -42,7 +42,7 @@ const Contact = () => {
             Contact <span className="text-accent">Us</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have questions about our toys? We&apos;d love to hear from you! 
+            Have questions about our products or services? We&apos;d love to hear from you! 
             Our friendly team is here to help.
           </p>
         </div>
@@ -225,9 +225,9 @@ const Contact = () => {
             Check out our frequently asked questions or give us a call!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="btn-playful bg-secondary text-secondary-foreground px-6">
+            {/* <Button className="btn-playful bg-secondary text-secondary-foreground px-6">
               View FAQ
-            </Button>
+            </Button> */}
             <Button variant="outline" className="btn-playful border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6">
               Call Us Now
             </Button>

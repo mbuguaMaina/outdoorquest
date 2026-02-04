@@ -32,8 +32,8 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-background/80 text-sm leading-relaxed">
-              Where playtime comes alive! We bring joy to children worldwide with our 
-              carefully curated collection of safe, educational, and fun toys.
+              Where adventure comes alive! We bring excitement to enthusiasts worldwide with our 
+              carefully curated collection of high-performance gaming gear and outdoor equipment.
             </p>
             <div className="flex gap-3">
               {[
@@ -78,7 +78,7 @@ const Footer = () => {
               Categories
             </h4>
             <ul className="space-y-2">
-              {["Educational Toys", "Outdoor Fun", "Plush & Soft", "General Toys"].map((cat) => (
+              {["Gaming Gear", "Outdoor Equipment", "Accessories", "Best Sellers"].map((cat) => (
                 <li key={cat}>
                   <Link
                     href={`/products?query=${cat.toLowerCase().split(" ")[0]}`}    

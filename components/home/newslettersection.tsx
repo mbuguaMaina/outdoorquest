@@ -49,8 +49,8 @@ const NewsletterSection = () => {
             Join the OutDoorQuest Family!
           </h2>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-xl mx-auto">
-            Subscribe to get exclusive updates on new toys, special offers, 
-            and fun activities for your little ones! 🎉
+            Subscribe to get exclusive updates on new gear, special offers, 
+            and adventure tips for your next journey! 🚀
           </p>
 
           {/* Form */}

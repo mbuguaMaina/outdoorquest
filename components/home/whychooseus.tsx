@@ -1,45 +1,45 @@
-import { Shield, Sparkles, Heart, Award, Truck, Smile } from "lucide-react";
+import { Gamepad, Castle, Baby, Tent, Truck, Smile } from "lucide-react";
 
 const features = [
   {
-    icon: Shield,
-    title: "100% Safe Materials",
-    description: "All our toys are made with non-toxic, child-safe materials that meet international safety standards.",
-    color: "text-accent",
-    bgColor: "bg-accent/10",
-  },
-  {
-    icon: Sparkles,
-    title: "Premium Quality",
-    description: "Durable construction that withstands endless playtime adventures and lasts for years.",
-    color: "text-primary",
-    bgColor: "bg-primary/10",
-  },
-  {
-    icon: Heart,
-    title: "Made with Love",
-    description: "Every toy is designed with care to bring maximum joy and educational value.",
-    color: "text-destructive",
-    bgColor: "bg-destructive/10",
-  },
-  {
-    icon: Award,
-    title: "Award Winning",
-    description: "Our collection includes many award-winning toys recognized for excellence.",
+    icon: Gamepad,
+    title: "Kids Gaming Gear",
+    description: "Controllers, headsets, and accessories designed for safe, comfortable play.",
     color: "text-secondary",
     bgColor: "bg-secondary/10",
   },
   {
+    icon: Castle,
+    title: "Inflatable Fun",
+    description: "Bounce houses and play castles perfect for parties and backyard adventures.",
+    color: "text-primary",
+    bgColor: "bg-primary/10",
+  },
+  {
+    icon: Baby,
+    title: "Kid-Safe Materials",
+    description: "Products tested for safety and comfort for children of all ages.",
+    color: "text-destructive",
+    bgColor: "bg-destructive/10",
+  },
+  {
+    icon: Tent,
+    title: "Play Tents & Forts",
+    description: "Indoor and outdoor tents to spark imagination and playful exploration.",
+    color: "text-accent",
+    bgColor: "bg-accent/10",
+  },
+  {
     icon: Truck,
     title: "Fast Shipping",
-    description: "Quick and secure delivery to get the fun started as soon as possible!",
+    description: "Quick and secure delivery to get you equipped as soon as possible!",
     color: "text-orange",
     bgColor: "bg-orange/10",
   },
   {
     icon: Smile,
-    title: "Happy Kids Guaranteed",
-    description: "If the kids aren't smiling, we'll make it right. That's our promise!",
+    title: "Satisfaction Guaranteed",
+    description: "If you're not satisfied with your gear, we'll make it right. That's our promise!",
     color: "text-purple",
     bgColor: "bg-purple/10",
   },
@@ -49,7 +49,7 @@ const WhyChooseUsSection = () => {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-background via-muted/30 to-background" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -58,11 +58,11 @@ const WhyChooseUsSection = () => {
             ⭐ Why OutDoorQuest?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-fredoka font-bold mb-4">
-            Why Families <span className="text-destructive">Love</span> Us
+            Why Enthusiasts <span className="text-destructive">Love</span> Us
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            We&apos;re not just about toys – we&apos;re about creating magical moments
-            and lasting memories for your little ones!
+            We&apos;re not just about gear – we&apos;re about fueling passions
+            and creating lasting memories on every adventure!
           </p>
         </div>
 
