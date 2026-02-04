@@ -93,7 +93,7 @@ const PopularToysSection = () => {
           {popularToys.map((toy, index) => (
             <div
               key={toy.id}
-              className={`cardProduct border-2 ${toy.color} overflow-hidden group`}
+              className={`cardProduct border-2 ${toy.color} overflow-hidden group rounded-lg`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Toy Image Area */}

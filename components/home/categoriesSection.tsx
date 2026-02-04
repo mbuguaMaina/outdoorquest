@@ -4,31 +4,36 @@ import Link from "next/link";
 
 const categories = [
   {
-    id: "kids-gaming",
-    name: "Kids Gaming",
+    id: "gaming",
+    name: "Gaming",
     description: "Fun & safe controls",
     icon: Gamepad2,
     color: "bg-secondary",
     emoji: "🎮",
     borderColor: "border-secondary",
+    
   },
   {
-    id: "inflatables",
+    id: "outdoor",
     name: "Inflatable Bouncers",
     description: "Jump & play!",
     icon: Castle,
     color: "bg-primary",
     emoji: "🏰",
     borderColor: "border-primary",
+ 
+
   },
   {
-    id: "play-tents",
+    id: "outdoor",
     name: "Play Tents",
     description: "Indoor/outdoor forts",
     icon: Tent,
     color: "bg-accent",
     emoji: "⛺",
     borderColor: "border-accent",
+   
+
   },
  
 ];
@@ -56,7 +61,7 @@ const CategoriesSection = () => {
             <Link
               key={category.id}
               href={`/products?query=${category.id}`}
-              className="group w-11/12 rounded-lg  md:min-w-72"
+              className="group w-11/12 rounded-lg  md:w-72"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={`card-product border-2 ${category.borderColor} h-full`}>
