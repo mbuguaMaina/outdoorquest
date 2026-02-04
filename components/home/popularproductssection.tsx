@@ -2,8 +2,21 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
-const popularProducts = [
+interface Product {
+  id: number;
+  name: string;
+  category: string;
+  ageRange: string;
+  emoji: string;
+  color: string;
+  bgGradient: string;
+  rating: number;
+  image?: string | null;
+}
+
+const popularProducts: Product[] = [
   {
     id: 1,
     name: "Kids Gaming Headset",
@@ -93,14 +106,23 @@ const PopularProductsSection = () => {
           {popularProducts.map((product, index) => (
             <div
               key={product.id}
-              className={`card-product border-2 ${product.color} overflow-hidden group`}
+              className={`card-product border-2 ${product.color} overflow-hidden group rounded-lg`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Product Image Area */}
-              <div className={`bg-linear-to-br ${product.bgGradient} p-8 flex items-center justify-center`}>
-                <div className="text-8xl group-hover:scale-110 transition-transform duration-300 drop-shadow-lg filter">
-                  {product.emoji}
-                </div>
+              <div className={`bg-linear-to-br ${product.bgGradient} flex items-center justify-center relative overflow-hidden aspect-square`}>
+                {product.image ? (
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="text-8xl group-hover:scale-110 transition-transform duration-300 drop-shadow-lg filter flex items-center justify-center h-full w-full p-8">
+                    {product.emoji}
+                  </div>
+                )}
               </div>
 
               {/* Product Info */}
@@ -119,13 +141,18 @@ const PopularProductsSection = () => {
                   {product.name}
                 </h3>
                 
-                <div className="flex items-center justify-between mt-4">
-                  <span className="text-sm text-muted-foreground font-semibold">
-                    Ages: {product.ageRange}
-                  </span>
-                  <Button size="sm" className="rounded-full bg-secondary hover:bg-secondary/80 text-secondary-foreground font-bold">
-                    View Details
-                  </Button>
+                <div className="flex items-center justify-end mt-4">
+                  <Link 
+                    href={`https://wa.me/+254758929927?text=${encodeURIComponent(
+                      `Sell me ${product.name}${product.image ? `\nImage: ${product.image}` : product.emoji}`
+                    )}`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="sm" className="rounded-full bg-green-500 hover:bg-green-600 text-white font-bold">
+                      Buy on WhatsApp
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

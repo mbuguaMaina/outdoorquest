@@ -6,9 +6,21 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Star, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
+
+interface Product {
+  id: number;
+  name: string;
+  category: string;
+  ageRange: string;
+  emoji: string;
+  rating: number;
+  description: string;
+  image?: string | null;
+}
 
 // Product Data
-const allProducts = [
+const allProducts: Product[] = [
   { id: 1, name: "Kids Gaming Headset", category: "gaming", ageRange: "6+", emoji: "🎧", rating: 4.9, description: "Lightweight, volume-limited headset for kids" },
   { id: 2, name: "Bounceland Bounce House Castle", category: "outdoor", ageRange: "3+", emoji: "🏰", rating: 4.9, description: "Inflatable castle with blower for backyard fun" },
   { id: 3, name: "Junior Game Controller", category: "gaming", ageRange: "6+", emoji: "🕹️", rating: 5.0, description: "Ergonomic controller sized for small hands" },
@@ -122,11 +134,20 @@ const ProductsContent = () => {
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     {/* Image Area */}
-                    <div className={`aspect-square ${colors.bg}/10 flex items-center justify-center p-8 relative overflow-hidden`}>
-                      <div className="text-8xl transform group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl filter">
-                        {product.emoji}
-                      </div>
-                      <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold shadow-xs">
+                    <div className={`aspect-square ${colors.bg}/10 flex items-center justify-center relative overflow-hidden`}>
+                      {product.image ? (
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="text-8xl transform group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl filter flex items-center justify-center h-full w-full p-8">
+                          {product.emoji}
+                        </div>
+                      )}
+                      <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold shadow-xs z-10">
                         {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
                       </div>
                     </div>
@@ -147,13 +168,18 @@ const ProductsContent = () => {
                         {product.description}
                       </p>
 
-                      <div className="flex items-center justify-between mt-auto pt-4 border-t border-border/50">
-                        <span className="text-xs font-semibold text-muted-foreground bg-muted px-2 py-1 rounded-md">
-                          Age: {product.ageRange}
-                        </span>
-                        <Button size="sm" className={`rounded-full ${colors.bg} ${colors.text} bg-opacity-20 hover:bg-opacity-30 border-0`}>
-                          Details
-                        </Button>
+                      <div className="flex items-center justify-end mt-auto pt-4 border-t border-border/50">
+                       <a 
+                    href={`https://wa.me/+254758929927?text=${encodeURIComponent(
+                      `Sell me ${product.name}${product.image ? `\nImage: ${product.image}` : product.emoji}`
+                    )}`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="sm" className="rounded-full bg-green-500 hover:bg-green-600 text-white font-bold">
+                      Buy on WhatsApp
+                    </Button>
+                  </a>
                       </div>
                     </div>
                   </div>

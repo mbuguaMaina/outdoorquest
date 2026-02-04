@@ -93,7 +93,7 @@ const PopularToysSection = () => {
           {popularToys.map((toy, index) => (
             <div
               key={toy.id}
-              className={`card-toy border-2 ${toy.color} overflow-hidden group`}
+              className={`cardProduct border-2 ${toy.color} overflow-hidden group`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Toy Image Area */}
@@ -129,7 +129,7 @@ const PopularToysSection = () => {
                 
                 {/* View Button */}
                 <Button asChild className="w-full mt-2 btn-playful bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground">
-                  <Link href={`https://wa.me/+254758929927?text=I%20would%20like%20to%20buy%20${toy.name}`} target="_blank">
+                  <Link href={`https://wa.me/+254758929927?text=I%20would%20like%20to%20buy%20${toy.name}%20${toy.emoji}`} target="_blank">
                     Buy on Whatsapp
                   </Link>
                 </Button>

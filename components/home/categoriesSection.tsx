@@ -1,5 +1,5 @@
 
-import { Gamepad2, Tent, Headphones, Castle } from "lucide-react";
+import { Gamepad2, Tent,  Castle } from "lucide-react";
 import Link from "next/link";
 
 const categories = [
@@ -30,15 +30,7 @@ const categories = [
     emoji: "⛺",
     borderColor: "border-accent",
   },
-  {
-    id: "audio-kids",
-    name: "Audio For Kids",
-    description: "Comfy headsets",
-    icon: Headphones,
-    color: "bg-pink",
-    emoji: "🎧",
-    borderColor: "border-pink",
-  },
+ 
 ];
 
 const CategoriesSection = () => {
@@ -59,19 +51,19 @@ const CategoriesSection = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className=" flex w-full justify-center gap-6 flex-wrap">
           {categories.map((category, index) => (
             <Link
               key={category.id}
               href={`/products?query=${category.id}`}
-              className="group"
+              className="group w-11/12 rounded-lg  md:min-w-72"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={`card-product border-2 ${category.borderColor} h-full`}>
                 <div className="flex flex-col items-center text-center p-6 space-y-4">
                   {/* Icon Circle */}
                   <div className={`${category.color} w-20 h-20 rounded-full flex items-center justify-center group-hover:animate-wiggle transition-transform shadow-lg`}>
-                    <span className="text-4xl">{category.emoji}</span>
+                    <span className="text-4xl"><category.icon/></span>
                   </div>
                   
                   {/* Text Content */}

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Star, TentIcon } from "lucide-react";
 import Link from "next/link";
  
 
@@ -96,14 +96,12 @@ const HeroSection = () => {
 
               {/* Floating Icons */}
               <div className="absolute -top-4 -left-4 bg-destructive p-4 rounded-2xl shadow-lg animate-float">
-                <span className="text-4xl">🎮</span>
+                <span className="text-4xl"><TentIcon/></span>
               </div>
                   <div className="absolute bottom-10 -right-4 bg-accent p-4 rounded-2xl shadow-lg animate-float" style={{ animationDelay: "1.5s" }}>
                     <span className="text-4xl">🏰</span>
               </div>
-              <div className="absolute top-1/2 -right-8 bg-secondary p-4 rounded-2xl shadow-lg animate-float" style={{ animationDelay: "0.8s" }}>
-                <span className="text-4xl">🎧</span>
-              </div>
+              
             </div>
           </div>
         </div>
