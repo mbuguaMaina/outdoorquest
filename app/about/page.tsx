@@ -98,7 +98,7 @@ const About = () => {
                 From a Small Dream to a <span className="text-destructive">Big Adventure</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-             OutDoorQuest started in a small garage with a simple mission: to bring joy to every child through toys that are not only fun but safe and educational. Our founder, Sarah, a mother of three with a deep love for children, wanted to create a world where every child could experience the happiness and wonder that the right toys can bring.
+            OutDoorQuest started  with a simple mission: to bring joy to every child through toys that are fun, safe, and educational. Driven by a passion for seeing children happy, we aim to create a world where every child can experience the wonder and excitement that the right toys can inspire
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Today, we&apos;ve grown into a beloved brand trusted by thousands of families 
