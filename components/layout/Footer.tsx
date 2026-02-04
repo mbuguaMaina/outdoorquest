@@ -81,7 +81,7 @@ const Footer = () => {
               {["Educational Toys", "Outdoor Fun", "Plush & Soft", "General Toys"].map((cat) => (
                 <li key={cat}>
                   <Link
-                    href="/products"    
+                    href={`/products?query=${cat.toLowerCase().split(" ")[0]}`}    
                     className="text-background/80 hover:text-secondary transition-colors hover:translate-x-1 inline-block"
                   >
                     {cat}
