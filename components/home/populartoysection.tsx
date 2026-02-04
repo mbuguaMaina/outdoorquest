@@ -97,7 +97,7 @@ const PopularToysSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Toy Image Area */}
-              <div className={`bg-gradient-to-br ${toy.bgGradient} p-8 flex items-center justify-center`}>
+              <div className={`bg-linear-to-br ${toy.bgGradient} p-8 flex items-center justify-center`}>
                 <span className="text-7xl group-hover:animate-bounce transition-transform">
                   {toy.emoji}
                 </span>
@@ -128,8 +128,10 @@ const PopularToysSection = () => {
                 </p>
                 
                 {/* View Button */}
-                <Button className="w-full mt-2 btn-playful bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground">
-                  View Details
+                <Button asChild className="w-full mt-2 btn-playful bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground">
+                  <Link href={`https://wa.me/+254758929927?text=I%20would%20like%20to%20buy%20${toy.name}`} target="_blank">
+                    Buy on Whatsapp
+                  </Link>
                 </Button>
               </div>
             </div>
