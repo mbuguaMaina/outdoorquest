@@ -2,7 +2,7 @@
 import { Gamepad2, Tent,  Castle } from "lucide-react";
 import Link from "next/link";
 
-const categories = [
+const categoriesStatic = [
   {
     id: "gaming",
     name: "Gaming",
@@ -38,7 +38,7 @@ const categories = [
  
 ];
 
-const CategoriesSection = ({categories}: {categories: any[]}) => {
+const CategoriesSection = ({categories}: {categories: any}) => {
   return (
     <section className="py-16 md:py-24 bg-muted/50 confetti-bg">
       <div className="container mx-auto px-4">
@@ -57,7 +57,7 @@ const CategoriesSection = ({categories}: {categories: any[]}) => {
 
         {/* Categories Grid */}
         <div className=" flex w-full justify-center gap-6 flex-wrap">
-          {categories.map((category, index) => (
+          {categories?.categories?.map((category:any, index:number) => (
             <Link
               key={category.id}
               href={`/products?query=${category.id}`}
