@@ -119,7 +119,7 @@ const Footer = () => {
             © {new Date().getFullYear()} OutDoorQuest. All rights reserved. 
           </p>
           <p className="text-background/60 text-sm flex items-center gap-1">
-            Made with <Heart className="h-4 w-4 text-destructive animate-pulse" />  by <a href="https://gtmtechnologies.com">GTM TECHNOLOGIES</a>
+            Made with <Heart className="h-4 w-4 text-destructive animate-pulse" />  by <a href="https://ggmtechnologies.co.ke">GGM TECHNOLOGIES</a>
           </p>
         </div>
       </div>

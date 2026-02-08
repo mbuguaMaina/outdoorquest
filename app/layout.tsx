@@ -4,6 +4,7 @@ import "./globals.css";
 import "./index.css";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+import { getSanityAllProducts, getSanityCategories } from "@/lib/sanity";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,11 +39,12 @@ export const metadata: Metadata = {
 
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body

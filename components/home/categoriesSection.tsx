@@ -38,7 +38,7 @@ const categories = [
  
 ];
 
-const CategoriesSection = () => {
+const CategoriesSection = ({categories}: {categories: any[]}) => {
   return (
     <section className="py-16 md:py-24 bg-muted/50 confetti-bg">
       <div className="container mx-auto px-4">

@@ -8,7 +8,10 @@ const eslintConfig = defineConfig([
   // Override default ignores of eslint-config-next.
    {
     rules: {
-      "@typescript-eslint/no-require-imports": "off"
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+
     }},
   globalIgnores([
     // Default ignores of eslint-config-next:

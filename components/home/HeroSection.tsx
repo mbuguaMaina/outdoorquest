@@ -7,10 +7,10 @@ const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-linear-to-br from-primary/20 via-background to-secondary/20 py-16 md:py-24">
       {/* Decorative Elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl animate-float" />
-      <div className="absolute bottom-20 right-20 w-32 h-32 bg-secondary/30 rounded-full blur-2xl animate-float" style={{ animationDelay: "1s" }} />
+       <div className="absolute top-10 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl animate-float" /> 
+       <div className="absolute bottom-20 right-20 w-32 h-32 bg-secondary/30 rounded-full blur-2xl animate-float" style={{ animationDelay: "1s" }} />
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-destructive/20 rounded-full blur-xl animate-float" style={{ animationDelay: "2s" }} />
-      <div className="absolute top-20 right-1/3 w-12 h-12 bg-accent/20 rounded-full blur-xl animate-float" style={{ animationDelay: "0.5s" }} />
+      <div className="absolute top-20 right-1/3 w-12 h-12 bg-accent/20 rounded-full blur-xl animate-float" style={{ animationDelay: "0.5s" }} /> 
 
       {/* Stars decoration */}
       {[...Array(6)].map((_, i) => (
@@ -59,7 +59,6 @@ const HeroSection = () => {
               </Link>
             </div>
 
-            {/* Stats */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-8 pt-6">
               {[
                 { number: "500+", label: "Products" },
@@ -79,7 +78,6 @@ const HeroSection = () => {
           {/* Right Content - Product Display */}
           <div className="flex-1 relative">
             <div className="relative w-full max-w-lg mx-auto">
-              {/* Main Circle */}
               <div className="aspect-square rounded-full bg-linear-to-br from-primary/40 via-secondary/30 to-accent/40 p-8 animate-pulse-scale">
                 <div className="w-full h-full rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center">
                   <div className="text-center space-y-4 p-8">
@@ -94,7 +92,6 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Floating Icons */}
               <div className="absolute -top-4 -left-4 bg-destructive p-4 rounded-2xl shadow-lg animate-float">
                 <span className="text-4xl"><TentIcon/></span>
               </div>
@@ -104,6 +101,7 @@ const HeroSection = () => {
               
             </div>
           </div>
+           
         </div>
       </div>
     </section>

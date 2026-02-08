@@ -3,6 +3,7 @@ import HeroSection from "@/components/home/HeroSection";
 import NewsletterSection from "@/components/home/newslettersection";
 import PopularProductsSection from "@/components/home/popularproductssection";
 import WhyChooseUsSection from "@/components/home/whychooseus";
+import { getSanityCategories } from "@/lib/sanity";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -27,11 +28,13 @@ export const metadata: Metadata = {
   },
 
 };
-const Index = () => {
+const Index = async () => {
+  const categories = await getSanityCategories()
+  console.log(categories)
   return (
     <>
       <HeroSection />
-      <CategoriesSection />
+      <CategoriesSection categories={categories} />
       <WhyChooseUsSection />
       <PopularProductsSection />
       <NewsletterSection />
