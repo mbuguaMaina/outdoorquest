@@ -1,5 +1,7 @@
 
+import { getImageUrl } from "@/lib/sanity";
 import { Gamepad2, Tent,  Castle } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const categoriesStatic = [
@@ -59,23 +61,21 @@ const CategoriesSection = ({categories}: {categories: any}) => {
         <div className=" flex w-full justify-center gap-6 flex-wrap">
           {categories?.categories?.map((category:any, index:number) => (
             <Link
-              key={category.id}
+              key={category._id}
               href={`/products?query=${category.id}`}
               className="group w-11/12 rounded-lg  md:w-72"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`card-product border-2 ${category.borderColor} h-full`}>
-                <div className="flex flex-col items-center text-center p-6 space-y-4">
+              <div className={` border-2 ${category.borderColor} h-full`}>
+                <div className="flex flex-col items-center text-center  space-y-4">
                   {/* Icon Circle */}
-                  <div className={`${category.color} w-20 h-20 rounded-full flex items-center justify-center group-hover:animate-wiggle transition-transform shadow-lg`}>
-                    <span className="text-4xl"><category.icon/></span>
-                  </div>
+                    <Image width={800} height={800} src={getImageUrl(category.imageUrl, {width:800, height:800})!} alt={category.name} className="w-60 h-40 object-cover" />
                   
                   {/* Text Content */}
                   <h3 className="font-fredoka text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {category.name}
+                    {category.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-sm line-clamp-2">
                     {category.description}
                   </p>
                   
