@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import SocialIcons from "../socialIcons";
  
 
 const navLinks = [
@@ -55,9 +56,8 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="btn-playful bg-secondary text-secondary-foreground px-6 py-2 text-base">
-              Explore Now!
-            </Button>
+                       <SocialIcons size="sm"/>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,9 +93,7 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link href="/contact" className="btn-playful bg-secondary text-secondary-foreground mt-2">
-                Explore Now!
-              </Link>
+            <SocialIcons size="sm"/>
             </div>
           </nav>
         )}

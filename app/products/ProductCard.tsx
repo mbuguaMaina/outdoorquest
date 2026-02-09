@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { getImageUrl } from '@/lib/sanity'
 import { Star } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function ProductCard({product, index, colors}:{product:any, index:number, colors:any}) {
@@ -27,7 +28,7 @@ function ProductCard({product, index, colors}:{product:any, index:number, colors
                     <div className="p-6">
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="font-fredoka text-lg font-bold line-clamp-1 group-hover:text-primary transition-colors">
-                          {product.title}
+                            <Link href={`/products/${product.slug}`}>{product.title}</Link>
                         </h3>
                         {/* <div className="flex items-center gap-1 text-orange text-sm font-bold bg-orange/10 px-2 py-0.5 rounded-full">
                           <Star className="h-3 w-3 fill-current" />
