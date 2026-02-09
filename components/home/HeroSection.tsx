@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, TentIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
  
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-primary/20 via-background to-secondary/20 py-16 md:py-24">
+    <section className="relative overflow-hidden bg-linear-to-br from-primary/20 via-background to-secondary/20 py-6 md:py-24">
       {/* Decorative Elements */}
        <div className="absolute top-10 left-10 w-20 h-20 bg-primary/30 rounded-full blur-2xl animate-float" /> 
        <div className="absolute bottom-20 right-20 w-32 h-32 bg-secondary/30 rounded-full blur-2xl animate-float" style={{ animationDelay: "1s" }} />
@@ -35,7 +36,7 @@ const HeroSection = () => {
               <span className="font-semibold text-sm">Welcome to OutDoorQuest!</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-fredoka font-bold leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-fredoka font-bold leading-tight">
               Gear Up for <span className="text-primary">Game</span>
               <br />
               & <span className="text-secondary">Outdoors!</span>
@@ -59,7 +60,7 @@ const HeroSection = () => {
               </Link>
             </div>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 pt-6">
+            {/* <div className="flex flex-wrap justify-center lg:justify-start gap-8 pt-6">
               {[
                 { number: "500+", label: "Products" },
                 { number: "10K+", label: "Happy Customers" },
@@ -72,16 +73,16 @@ const HeroSection = () => {
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Right Content - Product Display */}
-          <div className="flex-1 relative">
+          <div className="hidden md:flex flex-1 relative">
             <div className="relative w-full max-w-lg mx-auto">
               <div className="aspect-square rounded-full bg-linear-to-br from-primary/40 via-secondary/30 to-accent/40 p-8 animate-pulse-scale">
                 <div className="w-full h-full rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center">
                   <div className="text-center space-y-4 p-8">
-                        <div className="text-8xl animate-bounce">🏰</div>
+                        <Image src={`/outdoor.jpg`} width={100} height={100} alt="Premium Gear" className="text-8xl animate-bounce"/>
                     <p className="font-fredoka text-xl font-bold text-foreground">
                       Premium Gear
                     </p>

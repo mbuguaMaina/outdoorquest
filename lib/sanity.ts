@@ -160,12 +160,7 @@ export async function getSanityAllProducts(options: any = {}) {
         inStock,
         featured,
         "category": category->{
-          _id,
-          metaTitle,
-          "slug": slug.current,
-          metaDescription,
-          keywords[]
-        },
+        title, _id},
         seo
       },
     "total": count(*[_type == "product"${dynamicFilters}])
@@ -197,12 +192,10 @@ export async function getSanitySingleProduct({
   if (!slug && !id) return null;
   const query = `
     *[_type == "product" && ${slug ? "slug.current == $slug" : "_id == $id"}][0]{
-      _id, name, "slug": slug.current, price,brand, description,originalPrice,
-      specifications, unit, rate, 
-      "coverimage": coverimage.asset->url,
-      images[]{ "url": asset->url },
-      variants[]{ name, priceModifier },
-      "category": category->{ _id, name, "slug": slug.current, "parentCategoryTitle": parentCategory->name },
+      _id, title, "slug": slug.current, price, description,
+      "coverimage": image.asset->url,
+      gallery[]{ "url": asset->url },
+      "category": category->{ _id, title, "slug": slug.current},
       seo
     }
   `;

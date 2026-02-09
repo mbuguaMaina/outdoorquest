@@ -29,15 +29,16 @@ export const metadata: Metadata = {
 
 };
 const Index = async () => {
-  const categories = await getSanityCategories()
-  console.log(categories)
+ 
+ 
   return (
     <>
       <HeroSection />
-      <CategoriesSection categories={categories} />
-      <WhyChooseUsSection />
+      <CategoriesSection   />
+     
       <PopularProductsSection />
-      <NewsletterSection />
+       <WhyChooseUsSection />
+      {/* <NewsletterSection /> */}
     </>
   );
 };

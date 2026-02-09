@@ -5,6 +5,7 @@ import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
  
 
 const navLinks = [
@@ -25,10 +26,10 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative">
-              <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center group-hover:animate-wiggle transition-transform">
-                <Sparkles className="h-6 w-6 text-primary-foreground" />
+              <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center group-hover:animate-wiggle transition-transform">
+                <Image src={`/outdoor.jpg`} alt="OutDoorQuest Logo" width={48} height={48} className="object-cover text-primary-foreground" />
               </div>
-              <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-destructive animate-pulse" />
+        
             </div>
             <span className="text-2xl font-fredoka font-bold text-gradient">
               OutDoorQuest
@@ -92,9 +93,9 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button className="btn-playful bg-secondary text-secondary-foreground mt-2">
+              <Link href="/contact" className="btn-playful bg-secondary text-secondary-foreground mt-2">
                 Explore Now!
-              </Button>
+              </Link>
             </div>
           </nav>
         )}

@@ -1,92 +1,29 @@
 
-import { getImageUrl } from "@/lib/sanity";
-import { Gamepad2, Tent,  Castle } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import {   getSanityCategories } from "@/lib/sanity";
+import CategoryCard from "./CategoryCards";
 
-const categoriesStatic = [
-  {
-    id: "gaming",
-    name: "Gaming",
-    description: "Fun & safe controls",
-    icon: Gamepad2,
-    color: "bg-secondary",
-    emoji: "🎮",
-    borderColor: "border-secondary",
-    
-  },
-  {
-    id: "outdoor",
-    name: "Inflatable Bouncers",
-    description: "Jump & play!",
-    icon: Castle,
-    color: "bg-primary",
-    emoji: "🏰",
-    borderColor: "border-primary",
- 
-
-  },
-  {
-    id: "outdoor",
-    name: "Play Tents",
-    description: "Indoor/outdoor forts",
-    icon: Tent,
-    color: "bg-accent",
-    emoji: "⛺",
-    borderColor: "border-accent",
-   
-
-  },
- 
-];
-
-const CategoriesSection = ({categories}: {categories: any}) => {
+const CategoriesSection = async () => {
+  const categories = await getSanityCategories()
   return (
-    <section className="py-16 md:py-24 bg-muted/50 confetti-bg">
+    <section className="py-2 md:py-24 bg-muted/50 confetti-bg">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center md:mb-8 mb-4">
           <span className="inline-block bg-destructive/10 text-destructive px-4 py-1 rounded-full text-sm font-semibold mb-4">
-            🎪 Discover
+            🎪 Our Categories
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-fredoka font-bold mb-4">
+          <h2 className="text-xl md:text-4xl lg:text-5xl font-fredoka font-bold mb-4">
             Explore Our <span className="text-primary">Categories</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto md:text-lg">
           Whether it’s high-performance gaming gear or rugged outdoor equipment, find the perfect tools to fuel your passion!
           </p>
         </div>
 
         {/* Categories Grid */}
-        <div className=" flex w-full justify-center gap-6 flex-wrap">
-          {categories?.categories?.map((category:any, index:number) => (
-            <Link
-              key={category._id}
-              href={`/products?query=${category.id}`}
-              className="group w-11/12 rounded-lg  md:w-72"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className={` border-2 ${category.borderColor} h-full`}>
-                <div className="flex flex-col items-center text-center  space-y-4">
-                  {/* Icon Circle */}
-                    <Image width={800} height={800} src={getImageUrl(category.imageUrl, {width:800, height:800})!} alt={category.name} className="w-60 h-40 object-cover" />
-                  
-                  {/* Text Content */}
-                  <h3 className="font-fredoka text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {category.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-2">
-                    {category.description}
-                  </p>
-                  
-                  {/* Explore Link */}
-                  <div className="flex items-center gap-2 text-sm font-semibold text-secondary group-hover:gap-3 transition-all">
-                    <span>Explore</span>
-                    <span className="group-hover:animate-bounce">→</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
+        <div className=" grid grid-cols-1 md:grid-cols-4 w-full justify-center gap-6 flex-wrap">
+          {categories?.categories?.map((category:any) => (
+          <CategoryCard cat={category} key={category._id} />
           ))}
         </div>
       </div>

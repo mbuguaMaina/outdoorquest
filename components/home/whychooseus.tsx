@@ -47,7 +47,7 @@ const features = [
 
 const WhyChooseUsSection = () => {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden">
+    <section className="py-4 md:py-8 relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute inset-0 bg-linear-to-b from-background via-muted/30 to-background" />
       
