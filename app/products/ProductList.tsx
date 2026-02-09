@@ -1,9 +1,4 @@
 "use client"
-
-import { Button } from "@/components/ui/button";
-import { getImageUrl } from "@/lib/sanity";
-import { Star } from "lucide-react";
-import Image from "next/image";
 import ProductCard from "./ProductCard";
 
 const categoryColors: Record<string, { border: string; bg: string; text: string }> = {

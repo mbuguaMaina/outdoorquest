@@ -6,7 +6,7 @@ import FilterSection from "./FilterSection";
 import ProductList from "./ProductList";
 
 // Inner Products Component
-const ProductsContent = ({allProducts}: {allProducts: any[]}) => {
+const ProductsContent = ({allProducts, categories}: {allProducts: any[], categories: any[]}) => {
 
 const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
@@ -20,7 +20,7 @@ const [searchQuery, setSearchQuery] = useState("");
       product.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
         product.category?.title?.toLowerCase().includes(activeCategory.toLowerCase()) ||
          product.category?.title?.toLowerCase().includes(searchQuery.toLowerCase()) 
-    const matchesCategory = activeCategory === "all" || product.category?.toLowerCase() === activeCategory.toLowerCase();
+    const matchesCategory = activeCategory === "all" || product.category?.title?.toLowerCase() === activeCategory.toLowerCase();
     return matchesSearch && matchesCategory;
   });
 
@@ -40,7 +40,7 @@ const [searchQuery, setSearchQuery] = useState("");
           </p>
         </div>
       </section>
-<FilterSection  activeCategory={activeCategory} searchQuery={searchQuery} setSearchQuery={setSearchQuery} setActiveCategory={setActiveCategory} />
+<FilterSection categories={categories} activeCategory={activeCategory} searchQuery={searchQuery} setSearchQuery={setSearchQuery} setActiveCategory={setActiveCategory} />
     
 <ProductList activeCategory={activeCategory} products={filteredProducts} searchQuery={searchQuery} />
     
@@ -48,10 +48,10 @@ const [searchQuery, setSearchQuery] = useState("");
   );
 };
 
-const Products = ({products}:{products:any}) => {
+const Products = ({products, categories}:{products:any, categories:any}) => {
   return (
  
-      <ProductsContent allProducts={products} />
+      <ProductsContent allProducts={products} categories={categories} />
    
   );
 };

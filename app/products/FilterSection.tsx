@@ -6,9 +6,7 @@ import { Search } from 'lucide-react'
  
  
 
-function FilterSection({searchQuery,setSearchQuery, activeCategory, setActiveCategory}: {searchQuery: string, activeCategory: string, setSearchQuery: (query: string) => void, setActiveCategory: (category: string) => void}) {
-       
-     
+function FilterSection({categories, searchQuery,setSearchQuery, activeCategory, setActiveCategory}: {categories: any[], searchQuery: string, activeCategory: string, setSearchQuery: (query: string) => void, setActiveCategory: (category: string) => void}) {
   return (
           <section className="py-8 border-b border-border sticky top-20 bg-background/95 backdrop-blur-sm z-40">
             <div className="container mx-auto px-4">
@@ -29,8 +27,13 @@ function FilterSection({searchQuery,setSearchQuery, activeCategory, setActiveCat
                 <Tabs defaultValue="all" value={activeCategory} onValueChange={setActiveCategory} className="w-full md:w-auto">
                   <TabsList className="bg-muted/50 p-1 rounded-full w-full md:w-auto overflow-x-auto justify-start">
                     <TabsTrigger value="all" className="rounded-full px-6">All</TabsTrigger>
-                    <TabsTrigger value="gaming" className="rounded-full px-6">Gaming</TabsTrigger>
-                    <TabsTrigger value="outdoor" className="rounded-full px-6">Outdoor</TabsTrigger>
+                  {
+                    categories.map((category) => (
+                      <TabsTrigger key={category.title} value={category.title} className="rounded-full px-6">
+                        {category.title}
+                      </TabsTrigger>
+                    ))
+                  }
                   </TabsList>
                 </Tabs>
               </div>

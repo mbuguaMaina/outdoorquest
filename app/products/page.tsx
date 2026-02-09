@@ -1,7 +1,7 @@
 
 import { Metadata } from 'next'
 import Products from './productComp'
-import { getSanityAllProducts  } from '@/lib/sanity'
+import { getSanityAllProducts, getSanityCategories  } from '@/lib/sanity'
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
@@ -26,9 +26,10 @@ export default async function ProductsPage( { searchParams }: Props
 ): Promise<any> {
   const resolvedSearchParams = await searchParams
   const query = resolvedSearchParams.query
-  const products =  await getSanityAllProducts()
+  const [products, categories] = await Promise.all([getSanityAllProducts(), getSanityCategories()])
+       
 
   return (
-    <Products products={products.products} />    
+    <Products products={products.products} categories={categories.categories} />    
   )
 }
