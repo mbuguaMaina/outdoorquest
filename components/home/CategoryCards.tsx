@@ -25,7 +25,7 @@ const CategoryCard = ({cat}: {cat: any}) => {
 
             {/* Text content */}
             <div className="absolute  bottom-0 left-0 right-0 p-4 md:p-5">
-              <h3 className="text-white text-base hidden md:inline-block   md:text-lg font-bold leading-tight mb-2">
+              <h3 className="text-white text-xs text-shadow text-shadow-accent-foreground   md:text-lg font-bold leading-tight mb-2">
                 {cat.title}
               </h3>
               <span className="flex items-center gap-1 text-sm font-semibold text-white/90 group-hover:text-amber-600 transition-colors">
