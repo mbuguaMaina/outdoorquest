@@ -21,7 +21,7 @@ const CategoriesSection = async () => {
         </div>
 
         {/* Categories Grid */}
-        <div className=" grid grid-cols-1 md:grid-cols-4 w-full justify-center gap-6 flex-wrap">
+        <div className=" grid grid-cols-2 md:grid-cols-4 w-full justify-center gap-1 md:gap-6 flex-wrap">
           {categories?.categories?.map((category:any) => (
           <CategoryCard cat={category} key={category._id} />
           ))}

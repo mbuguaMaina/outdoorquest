@@ -31,7 +31,7 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left space-y-6">
-            <div className="inline-flex items-center gap-2 bg-primary/20 px-4 py-2 rounded-full">
+            <div className="hidden md:inline-flex items-center gap-2 bg-primary/20 px-4 py-2 rounded-full">
               <span className="animate-bounce">🎮</span>
               <span className="font-semibold text-sm">Welcome to OutDoorQuest!</span>
             </div>
@@ -46,7 +46,7 @@ const HeroSection = () => {
              Discover a world of premium Gaming gear and Outdoor equipment, where every item fuels your passion, enhances your skills, and creates unforgettable experiences!
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-row gap-4 justify-center lg:justify-start">
               <Link href="/products">
                 <Button className="btn-playful bg-primary text-primary-foreground px-8 py-6 text-lg group">
                   Explore Gear

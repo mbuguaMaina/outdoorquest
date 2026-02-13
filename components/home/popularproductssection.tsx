@@ -14,7 +14,7 @@ const PopularProductsSection = async () => {
     <section className="py-4 md:py-8 bg-muted/30">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 md:mb-12 gap-4">
           <div>
             <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-semibold mb-4">
               🌟 Fan Favorites
@@ -27,8 +27,8 @@ const PopularProductsSection = async () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {popularProducts.map((product:any, index:number) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6">
+          {popularProducts?.slice(0,6)?.map((product:any, index:number) => (
             <div
               key={product._id}
               className={`card-product border-2 ${product.color} overflow-hidden group rounded-lg`}
