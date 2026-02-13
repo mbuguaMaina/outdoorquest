@@ -9,7 +9,7 @@ function ProductCard({product, index, colors}:{product:any, index:number, colors
   return (
        <div
                     key={product._id}
-                    className={`group bg-card rounded-3xl cursor-pointer overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${colors.border}`}
+                    className={`group min-w-[50dvw] flex-1 md:min-w-[25dvw] bg-card rounded-3xl cursor-pointer overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${colors.border}`}
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     {/* Image Area */}

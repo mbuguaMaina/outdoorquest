@@ -8,7 +8,7 @@ import { Search } from 'lucide-react'
 
 function FilterSection({categories, searchQuery,setSearchQuery, activeCategory, setActiveCategory}: {categories: any[], searchQuery: string, activeCategory: string, setSearchQuery: (query: string) => void, setActiveCategory: (category: string) => void}) {
   return (
-          <section className="py-8 border-b border-border sticky top-20 bg-background/95 backdrop-blur-sm z-40">
+          <section className="py-8 border-b border-border sticky top-8 bg-background/95 backdrop-blur-sm z-40">
             <div className="container mx-auto px-4">
               <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
                 {/* Search */}
