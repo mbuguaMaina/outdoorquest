@@ -19,7 +19,7 @@ const PopularProductsSection = async () => {
             <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-semibold mb-4">
               🌟 Fan Favorites
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-fredoka font-bold">
+            <h2 className="text-xl md:text-4xl lg:text-5xl font-fredoka font-bold">
               Popular <span className="text-secondary">Products</span>
             </h2>
           </div>
@@ -27,7 +27,7 @@ const PopularProductsSection = async () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6">
           {popularProducts?.slice(0,6)?.map((product:any, index:number) => (
             <div
               key={product._id}
@@ -35,12 +35,12 @@ const PopularProductsSection = async () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Product Image Area */}
-              <div className={`bg-linear-to-br ${product.bgGradient} flex items-center justify-center relative overflow-hidden aspect-square`}>
+              <div className={`bg-linear-to-br ${product.bgGradient} h-48  flex items-center justify-center relative overflow-hidden aspect-square`}>
                
                   <Image
                     src={getImageUrl(product.coverimage)!}
                     alt={product.title}
-                    fill
+                    width={400} height={800}
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                
