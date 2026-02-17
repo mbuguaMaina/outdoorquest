@@ -19,7 +19,7 @@ const ProductSection = ({product}:{product:any}) => {
   return (
     <section className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-2 md:py-20">
       {/* Image */}
-      <div className="overflow-hidden rounded-2xl bg-secondary h-[450px]">
+      <div className="overflow-hidden rounded-2xl bg-secondary h-112.5">
         <Image
         width={500}
         height={500}
@@ -38,7 +38,7 @@ const ProductSection = ({product}:{product:any}) => {
           </h1>
         </div>
 
-        <p className="text-3xl font-semibold text-foreground">KES {product.price}</p>
+        <p className="text-3xl font-semibold text-foreground">{Intl.NumberFormat("en-US",{style:"currency", currency:"KES"}).format(product.price)}</p>
 
         <p className="leading-relaxed line-clamp-2 text-muted-foreground">
           {product.description}

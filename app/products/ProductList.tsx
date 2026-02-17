@@ -20,7 +20,7 @@ function ProductList({products, activeCategory, searchQuery}: {products: any[], 
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           {filteredProducts.length > 0 ? (
-            <div className=" flex w-full md:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className=" flex flex-wrap  w-full md:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filteredProducts.map((product, index) => {
                 
                 const colors = categoryColors[product.category.title] || categoryColors.default;

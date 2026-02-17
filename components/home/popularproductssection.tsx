@@ -35,7 +35,7 @@ const PopularProductsSection = async () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Product Image Area */}
-              <div className={`bg-linear-to-br ${product.bgGradient} h-48  flex items-center justify-center relative overflow-hidden aspect-square`}>
+              <Link href={`/products/${product.slug}`} className={`bg-linear-to-br ${product.bgGradient} h-48  flex items-center justify-center relative overflow-hidden aspect-square md:aspect-auto`}>
                
                   <Image
                     src={getImageUrl(product.coverimage)!}
@@ -44,7 +44,7 @@ const PopularProductsSection = async () => {
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                
-              </div>
+              </Link>
 
               {/* Product Info */}
               <div className="md:p-4 p-2 bg-card">

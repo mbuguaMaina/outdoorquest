@@ -1,11 +1,14 @@
+"use client"
 import { Button } from '@/components/ui/button'
 import { getImageUrl } from '@/lib/sanity'
-import { Star } from 'lucide-react'
+ 
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import { useRouter } from 'next/navigation'
+ 
 
 function ProductCard({product, index, colors}:{product:any, index:number, colors:any}) {
+  const router = useRouter()
   return (
        <div
                     key={product._id}
@@ -19,8 +22,14 @@ function ProductCard({product, index, colors}:{product:any, index:number, colors
                           src={getImageUrl(product.coverimage)!}
                           alt={product.title}
                           fill
+                          onClick={()=>{}}
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50">
+                          <Button size="sm" className="text-white font-bold" onClick={()=>{router.push(`/products/${product.slug}`)}}>
+                            View Details
+                          </Button>
+                        </div>
                    
                     </div>
 

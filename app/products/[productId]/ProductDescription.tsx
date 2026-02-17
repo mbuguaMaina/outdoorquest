@@ -10,10 +10,10 @@ const specs = [
 
 const ProductDescription = () => (
   <section className="mx-auto max-w-6xl px-4 py-16">
-    <div className="grid gap-12 md:grid-cols-2">
+    <div className="grid gap-12 md:grid-cols-1">
       <div>
         <h2 className="mb-4 text-2xl font-bold text-foreground">About This Tent</h2>
-        <div className="space-y-4 leading-relaxed text-muted-foreground">
+        <div className="space-y-4 leading-relaxed text-muted-foreground md:columns-2">
           <p>
             The Alpine Pro 4-Person Camping Tent is built for adventurers who demand reliability
             without the bulk. Its lightweight aluminum frame and ripstop polyester fly keep you
@@ -28,7 +28,7 @@ const ProductDescription = () => (
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <h2 className="mb-4 text-2xl font-bold text-foreground">Specifications</h2>
         <dl className="divide-y">
           {specs.map(([label, value]) => (
@@ -38,7 +38,7 @@ const ProductDescription = () => (
             </div>
           ))}
         </dl>
-      </div>
+      </div> */}
     </div>
   </section>
 );
