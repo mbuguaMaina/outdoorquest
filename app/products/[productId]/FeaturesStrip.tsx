@@ -1,10 +1,10 @@
-import { Droplets, Feather, Users, Clock } from "lucide-react";
+import {   Users,  Box, Puzzle, ShieldCheck } from "lucide-react";
 
 const features = [
-  { icon: Droplets, label: "Waterproof", value: "3000mm" },
-  { icon: Feather, label: "Weight", value: "3.2 kg" },
-  { icon: Users, label: "Capacity", value: "4 Person" },
-  { icon: Clock, label: "Setup", value: "< 5 min" },
+  { icon: Users, label: "Age Range", value: "3+ Years" },
+  { icon: Box, label: "Material", value: "ABS Plastic / Wood / Fabric" },
+  { icon: Puzzle, label: "Skill Development", value: "Motor Skills & Creativity" },
+  { icon: ShieldCheck, label: "Safety Standard", value: "Non-Toxic & Child-Safe" },
 ];
 
 const FeaturesStrip = () => (
