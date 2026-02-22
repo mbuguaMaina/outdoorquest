@@ -27,7 +27,7 @@ const Header = () => {
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative">
               <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center group-hover:animate-wiggle transition-transform">
-                <Image src={`/outdoor.jpg`} alt="OutDoorQuest Logo" width={48} height={48} className="object-cover text-primary-foreground" />
+                <Image unoptimized src={`/outdoor.jpg`} alt="OutDoorQuest Logo" width={48} height={48} className="object-cover text-primary-foreground" />
               </div>
         
             </div>

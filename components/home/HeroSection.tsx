@@ -82,7 +82,7 @@ const HeroSection = () => {
               <div className="aspect-square rounded-full bg-linear-to-br from-primary/40 via-secondary/30 to-accent/40 p-8 animate-pulse-scale">
                 <div className="w-full h-full rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center">
                   <div className="text-center space-y-4 p-8">
-                        <Image src={`/outdoor.jpg`} width={100} height={100} alt="Premium Gear" className="text-8xl animate-bounce"/>
+                        <Image unoptimized src={`/outdoor.jpg`} width={100} height={100} alt="Premium Gear" className="text-8xl animate-bounce"/>
                     <p className="font-fredoka text-xl font-bold text-foreground">
                       Premium Gear
                     </p>

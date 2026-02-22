@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { getImageUrl, getSanityAllProducts } from "@/lib/sanity";
+import ProductCard from "@/app/products/ProductCard";
 
  
  
@@ -12,7 +13,7 @@ const PopularProductsSection = async () => {
   const {products:popularProducts} = await getSanityAllProducts({featured:false});
   return (
     <section className="py-4 md:py-8 bg-muted/30">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 md:mb-12 gap-4">
           <div>
@@ -29,55 +30,7 @@ const PopularProductsSection = async () => {
         {/* Products Grid */}
         <div className="grid grid-cols-2  md:grid-cols-4 gap-1 md:gap-2">
           {popularProducts?.slice(0,6)?.map((product:any, index:number) => (
-            <div
-              key={product._id}
-              className={`card-product border-2 ${product.color} overflow-hidden group rounded-lg`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Product Image Area */}
-              <Link href={`/products/${product.slug}`} className={`bg-linear-to-br ${product.bgGradient} h-48  flex items-center justify-center relative overflow-hidden aspect-square md:aspect-auto`}>
-               
-                  <Image
-                    src={getImageUrl(product.coverimage)!}
-                    alt={product.title}
-                    width={400} height={800}
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-               
-              </Link>
-
-              {/* Product Info */}
-              <div className="md:p-4 p-2 bg-card">
-                {/* <div className="flex justify-between items-start mb-2">
-                  <span className={`text-xs font-bold px-2 py-1 rounded-full bg-muted uppercase tracking-wider ${product.color?.replace('border-', 'text-') || 'text-primary'}`}>
-                    {product.category?.title}
-                  </span>
-                  <div className="flex items-center gap-1 text-orange text-sm font-bold">
-                    <span>★</span>
-                    <span>{product.rating || 4.5}</span>
-                  </div>
-                </div> */}
-                <Link href={`/products/${product.slug}`} >
-                <h3 className="font-fredoka text-base md:text-xl md:font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                  {product.title}
-                </h3>
-                </Link>
-                
-                <div className="flex items-center justify-end mt-4">
-                  <Link 
-                    href={`https://wa.me/+254758929927?text=${encodeURIComponent(
-                      `Sell me ${product.title}${product.coverimage ? `\nImage: ${getImageUrl(product.coverimage)}` : product.emoji}`
-                    )}`}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <Button size="sm" className="rounded-full bg-green-500 hover:bg-green-600 text-white font-bold">
-                      Buy on WhatsApp
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <ProductCard key={product._id}   index={index} product={product} />
           ))}
         </div>
       </div>

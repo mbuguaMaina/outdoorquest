@@ -7,18 +7,19 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
  
 
-function ProductCard({product, index, colors}:{product:any, index:number, colors:any}) {
+function ProductCard({product, index, colors}:{product:any, index:number, colors?:any}) {
   const router = useRouter()
   return (
        <div
                     key={product._id}
-                    className={`group min-w-[50dvw] flex-1 md:min-w-[19dvw] bg-card rounded-3xl cursor-pointer overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${colors.border}`}
+                    className={`group min-w-[45dvw] flex-1 md:min-w-[19dvw] bg-card rounded-md md:rounded-3xl cursor-pointer overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${colors?.border || "border-border"}`}
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     {/* Image Area */}
-                    <div className={`aspect-square ${colors.bg}/10 flex items-center justify-center relative overflow-hidden`}>
+                    <div className={`aspect-square ${colors?.bg || "bg-card"}/10 flex items-center justify-center relative overflow-hidden`}>
                      
                         <Image
+                        unoptimized
                           src={getImageUrl(product.coverimage)!}
                           alt={product.title}
                           fill

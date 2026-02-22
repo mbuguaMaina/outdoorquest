@@ -34,9 +34,8 @@ const Index = async () => {
   return (
     <>
       <HeroSection />
-      <CategoriesSection   />
-     
       <PopularProductsSection />
+      <CategoriesSection   />
        <WhyChooseUsSection />
       {/* <NewsletterSection /> */}
     </>

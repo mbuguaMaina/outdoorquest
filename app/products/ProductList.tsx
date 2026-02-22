@@ -20,10 +20,9 @@ function ProductList({products, activeCategory, searchQuery}: {products: any[], 
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           {filteredProducts.length > 0 ? (
-            <div className=" flex flex-wrap  w-full md:grid sm:grid-cols-2  md:grid-cols-4 gap-2">
+            <div className=" flex flex-wrap  w-full md:grid sm:grid-cols-2   md:grid-cols-4 gap-1">
               {filteredProducts.map((product, index) => {
-                
-                const colors = categoryColors[product.category.title] || categoryColors.default;
+                const colors = categoryColors[product.category?.title || "default"] || categoryColors.default;
                 return (
                 <ProductCard key={product._id} colors={colors} index={index} product={product} />
                 );

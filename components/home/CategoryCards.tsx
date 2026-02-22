@@ -12,6 +12,7 @@ const CategoryCard = ({cat}: {cat: any}) => {
           >
             {/* Background image */}
             <Image
+              unoptimized
               width={500}
               height={500}
               src={getImageUrl(cat.imageUrl, {width:500, height:500})!}

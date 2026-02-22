@@ -21,6 +21,7 @@ const ProductSection = ({product}:{product:any}) => {
       {/* Image */}
       <div className="overflow-hidden rounded-2xl bg-secondary h-112.5">
         <Image
+        unoptimized
         width={500}
         height={500}
           src={product.coverimage ? getImageUrl(product.coverimage)! :  '/tent-product.jpg'}
