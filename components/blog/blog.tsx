@@ -2,7 +2,7 @@
  
  
 import BlogCard from "./BlogCard";
-import BlogHeader from "./blogHeader";
+ 
 import { blogPosts } from "./sampledata";
 
 const Blog = () => {
@@ -10,12 +10,11 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <BlogHeader />
-
+   
       <main className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
+        <div className=" mb-12">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-            The Journal
+            Our Blog
           </h1>
           <p className="mt-3 text-lg text-muted-foreground max-w-xl mx-auto">
             Stories, tips, and inspiration for intentional living.
