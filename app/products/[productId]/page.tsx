@@ -14,7 +14,7 @@ async function page({params}:{params:{productId:string}}) {
             </div>
         )
     }
-    console.log(product)
+   
   return (
     <article>
        <ProductSection product={product} />

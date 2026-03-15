@@ -7,8 +7,6 @@ function SocialIcons({size}:{size?:"sm" | undefined}) {
                   {[
                     { name: "Facebook", emoji: Facebook, color: "bg-secondary" },
                     { name: "Instagram", emoji: Instagram, color: "bg-pink" },
-                    { name: "Twitter", emoji: Twitter, color: "bg-secondary" },
-                    { name: "YouTube", emoji: Youtube, color: "bg-destructive" },
                   ].map((social) => (
                     <a
                       key={social.name}

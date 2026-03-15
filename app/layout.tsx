@@ -50,11 +50,11 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="min-h-screen flex flex-col">
+        <main className="min-h-screen  flex flex-col">
           <Header />
-          <main className="grow">{children}</main>
+          <div className="grow container mx-auto max-w-350">{children}</div>
           <Footer />
-        </div>
+        </main>
       </body>
     </html>
   );

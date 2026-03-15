@@ -12,7 +12,7 @@ function ProductCard({product, index, colors}:{product:any, index:number, colors
   return (
        <div
                     key={product._id}
-                    className={`group min-w-[45dvw] flex-1 md:min-w-[19dvw] bg-card rounded-md md:rounded-3xl cursor-pointer overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${colors?.border || "border-border"}`}
+                    className={`group min-w-[45dvw] flex-1 md:min-w-50 bg-card rounded-md md:rounded-3xl cursor-pointer overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${colors?.border || "border-border"}`}
                     style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     {/* Image Area */}

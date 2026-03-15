@@ -3,7 +3,7 @@ import HeroSection from "@/components/home/HeroSection";
 import NewsletterSection from "@/components/home/newslettersection";
 import PopularProductsSection from "@/components/home/popularproductssection";
 import WhyChooseUsSection from "@/components/home/whychooseus";
-import { getSanityCategories } from "@/lib/sanity";
+import { getSanityAllProducts, getSanityCategories } from "@/lib/sanity";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,16 +29,16 @@ export const metadata: Metadata = {
 
 };
 const Index = async () => {
- 
+  const {products:popularProducts} = await getSanityAllProducts({featured:false});
  
   return (
-    <>
-      <HeroSection />
-      <PopularProductsSection />
+    <section className="mt-2.5 ">
+      <HeroSection products={popularProducts} />
+      <PopularProductsSection   />
       <CategoriesSection   />
        <WhyChooseUsSection />
       {/* <NewsletterSection /> */}
-    </>
+    </section>
   );
 };
 

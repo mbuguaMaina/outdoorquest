@@ -9,8 +9,8 @@ import ProductCard from "@/app/products/ProductCard";
  
  
 
-const PopularProductsSection = async () => {
-  const {products:popularProducts} = await getSanityAllProducts({featured:false});
+const PopularProductsSection = async ( ) => {
+ const {products:popularProducts} = await getSanityAllProducts({featured:false});
   return (
     <section className="py-4 md:py-8 bg-muted/30">
       <div className="container mx-auto px-2">
