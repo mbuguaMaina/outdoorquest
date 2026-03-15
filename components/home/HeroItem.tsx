@@ -28,7 +28,7 @@ function HeroItem({product}:{product:any}) {
 
             <div className="flex flex-wrap justify-end gap-4 pt-2">
               <button className="rounded-md flex gap-1.5 bg-green-600 px-6 items-center font-semibold text-white hover:bg-green-700 transition">
-               <Image alt='whatapp logo' className='object-cover object-center ' width={20} height={20} src={whatsapp} /> Buy Now 
+               <Image alt='whatapp logo' className='object-cover object-center '  width={20} height={20} src={whatsapp} /> Buy Now 
               </button>
 
               <button className="rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-700 hover:bg-gray-100 transition">
@@ -40,11 +40,15 @@ function HeroItem({product}:{product:any}) {
           {/* IMAGE */}
 <div className="relative md:flex-1 w-full">
   {/* eslint-disable-next-line @next/next/no-img-element */}
-  <img
-  onClick={() => router.push(`/products/${product.slug}`)}
-width={1280}
-height={800} 
-src={product.coverimage}
+  <Image
+    unoptimized
+    priority={true}
+    loading="eager"
+    
+    onClick={() => router.push(`/products/${product.slug}`)}
+    width={1280}
+    height={800}
+    src={product.coverimage}
               alt="Mahogany Door"
               className=" object-cover max-h-[55dvh] object-center w-full rounded-xl shadow-xl"
             />

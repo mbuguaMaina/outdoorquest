@@ -3,6 +3,7 @@
  
 import Link from "next/link";
 import { BlogPost } from "./sampledata";
+import Image from "next/image";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -18,11 +19,16 @@ const BlogCard = ({ post, featured = false }: BlogCardProps) => {
       >
         <div className="grid md:grid-cols-2">
           <div className="overflow-hidden">
-            <img
+            <Image
+            unoptimized
+        height={500}
+        width={800}
+            priority={true}
+            loading="eager"
               src={post.image}
               alt={post.title}
               className="h-64 md:h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
+              
             />
           </div>
           <div className="flex flex-col justify-center p-8 md:p-12">
@@ -52,11 +58,17 @@ const BlogCard = ({ post, featured = false }: BlogCardProps) => {
       className="group block overflow-hidden rounded-lg bg-card shadow-md hover:shadow-xl transition-all duration-300 animate-fade-in-up"
     >
       <div className="overflow-hidden">
-        <img
+        <Image
+        unoptimized
+   height={500}
+        width={800}
+          
+        priority={true}
+        loading="eager"
           src={post.image}
           alt={post.title}
           className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
+        
         />
       </div>
       <div className="p-6">

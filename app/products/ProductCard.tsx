@@ -19,10 +19,11 @@ function ProductCard({product, index, colors}:{product:any, index:number, colors
                     <div className={`aspect-square ${colors?.bg || "bg-card"}/10 flex items-center justify-center relative overflow-hidden`}>
                      
                         <Image
+                        fill
                         unoptimized
                           src={getImageUrl(product.coverimage)!}
                           alt={product.title}
-                          fill
+                          
                           onClick={()=>{}}
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />

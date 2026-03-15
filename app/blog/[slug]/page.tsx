@@ -2,6 +2,8 @@
 /* eslint-disable @next/next/no-img-element */
 
 import PortableTextRenderer from "@/lib/portableText";
+import Image from "next/image";
+ 
 import Link from "next/link";
  
 
@@ -238,7 +240,12 @@ async function SingleBlogPage({ params }: { params: Promise<{ slug: string }> })
       {/* ─── Featured Image ─── */}
       <div className="max-w-7xl mx-auto  ">
         <div className="relative overflow-hidden" style={{ aspectRatio: "21/9" }}>
-          <img
+          <Image
+         width={300}
+         height={200}
+          priority={true}
+          loading="eager"
+          unoptimized
             src={post.mainImage.asset.url}
             alt={post.mainImage.alt}
             className="w-full h-full object-cover aspect-video object-center backdrop-grayscale-50 rounded hover:grayscale-0 transition-all duration-700 ease-out"
