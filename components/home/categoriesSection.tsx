@@ -9,9 +9,7 @@ const CategoriesSection = async () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center md:mb-8 mb-4">
-          <span className="inline-block bg-destructive/10 text-destructive px-4 py-1 rounded-full text-sm font-semibold mb-4">
-            🎪 Our Categories
-          </span>
+           
           <h2 className="text-xl md:text-4xl lg:text-5xl font-fredoka font-bold mb-4">
             Explore Our <span className="text-primary">Categories</span>
           </h2>

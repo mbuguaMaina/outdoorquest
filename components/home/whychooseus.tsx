@@ -54,9 +54,7 @@ const WhyChooseUsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <span className="inline-block bg-secondary/10 text-secondary px-4 py-1 rounded-full text-sm font-semibold mb-4">
-            ⭐ Why OutDoorQuest?
-          </span>
+      
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-fredoka font-bold mb-4">
             Why Enthusiasts <span className="text-destructive">Love</span> Us
           </h2>

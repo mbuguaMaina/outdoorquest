@@ -50,7 +50,7 @@ function HeroItem({product}:{product:any}) {
     height={800}
     src={product.coverimage}
               alt="Mahogany Door"
-              className=" object-cover max-h-[55dvh] object-center w-full rounded-xl shadow-xl"
+              className=" object-cover h-[35dvh] md:h-[55dvh] object-center w-full rounded-xl shadow-xl"
             />
   </div>
           
