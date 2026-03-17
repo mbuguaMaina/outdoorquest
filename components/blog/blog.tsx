@@ -2,11 +2,9 @@
  
  
 import BlogCard from "./BlogCard";
- 
-import { blogPosts } from "./sampledata";
 
-const Blog = () => {
-  const [featured, ...rest] = blogPosts;
+const Blog = ({ blogs }: { blogs: any[] }) => {
+  const [featured, ...rest] = blogs;
 
   return (
     <div className="min-h-screen bg-background">

@@ -398,3 +398,57 @@ export async function getSanitySubcategories() {
     return (await safeFetch(query)) || [];
   });
 }
+
+
+export async function getSingleBlogPost(slug: string) {
+  const query = `
+  *[_type == "post" && slug.current == $slug][0]{
+    title,
+    slug,
+    excerpt,
+    publishedAt,
+    mainImage{
+      asset->{url},
+      alt
+    },
+    body[]{
+      ...,
+      _type == "productReference" => {
+        product->{
+          _id,
+          name,
+          slug,
+          price,
+          image{
+            asset->{url}
+          }
+        }
+      }
+    }
+  }
+  `;
+
+  const data = await safeFetch(query, { slug });
+
+  return data || null;
+}
+
+export async function getAllBlogPosts() {
+  const query = `
+  *[_type == "post"] | order(publishedAt desc){
+    _id,
+    title,
+    slug,
+    excerpt,
+    publishedAt,
+    mainImage{
+      asset->{url},
+      alt
+    }
+  }
+  `;
+
+  const data = await safeFetch(query);
+
+  return data || [];
+}
