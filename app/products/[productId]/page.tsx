@@ -20,15 +20,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const ogImage = getImageUrl(product.coverimage)
-  const ogImageAlt = product.name
+  const ogImageAlt = product.title
 
   return {
-    title: `${product.name} - OutDoorQuest`,
+    title: `${product.title} - OutDoorQuest`,
     description:
       product.description ??
-      `Shop ${product.name} at OutDoorQuest. Fun, safe, and high-quality Gaming and Outdoor toys for kids of all ages.`,
+      `Shop ${product.title} at OutDoorQuest. Fun, safe, and high-quality Gaming and Outdoor toys for kids of all ages.`,
     keywords: [
-      product.name,
+      product.title,
       product.category ?? 'Gaming and Outdoor toys',
       'kids Gaming and Outdoor toys',
       'toy shop',
@@ -36,10 +36,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'children gifts',
     ].filter(Boolean) as string[],
     openGraph: {
-      title: `${product.name} - OutDoorQuest`,
+      title: `${product.title} - OutDoorQuest`,
       description:
         product.description ??
-        `Discover ${product.name} at OutDoorQuest — fun and safe Gaming and Outdoor toys for every child.`,
+        `Discover ${product.title} at OutDoorQuest — fun and safe Gaming and Outdoor toys for every child.`,
       url: `https://www.outdoorquest.co.ke/products/${productId}`,
       siteName: 'OutDoorQuest',
       images: [{ url: ogImage!, width: 1200, height: 630, alt: ogImageAlt }],
@@ -48,10 +48,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${product.name} - OutDoorQuest`,
+      title: `${product.title} - OutDoorQuest`,
       description:
         product.description ??
-        `Discover ${product.name} at OutDoorQuest — fun and safe Gaming and Outdoor toys for every child.`,
+        `Discover ${product.title} at OutDoorQuest — fun and safe Gaming and Outdoor toys for every child.`,
       images: [ogImage!],
     },
     alternates: {
