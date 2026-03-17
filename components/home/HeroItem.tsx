@@ -9,7 +9,7 @@ function HeroItem({product}:{product:any}) {
  
   const router = useRouter()
   return (
-      <div className="flex max-h-full  flex-col-reverse md:flex-row items-start gap-6 shrink-0 w-full rounded-lg shadow   md:gap-12">
+      <div className="flex max-h-full  flex-col-reverse md:flex-row items-start gap-6 shrink-0   rounded-lg md:rounded-l-none w-full shadow   md:gap-12">
 
           {/* TEXT CONTENT */}
           <div className="space-y-6 hidden md:flex flex-col justify-between h-full ps-5 py-5 flex-1">
@@ -49,7 +49,6 @@ function HeroItem({product}:{product:any}) {
 
           {/* IMAGE */}
 <div className="relative md:flex-1 w-full">
-  {/* eslint-disable-next-line @next/next/no-img-element */}
   <Image
     unoptimized
     priority={true}
@@ -61,8 +60,10 @@ function HeroItem({product}:{product:any}) {
     height={800}
     src={getImageUrl(product.coverimage)!}
               alt="Mahogany Door"
-              className=" object-cover h-[35dvh] md:h-[55dvh] object-center w-full rounded-xl shadow-xl"
+              className=" object-cover h-[35dvh] md:h-[55dvh] object-center w-full rounded-xl md:rounded-l-none shadow-xl"
             />
+
+            <span className='md:hidden absolute bottom-1 right-2 bg-black/25 text-white p-1 rounded'>Tap for details</span>
   </div>
           
          

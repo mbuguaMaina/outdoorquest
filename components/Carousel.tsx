@@ -54,7 +54,7 @@ export default function Carousel({
     {/* Previous */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full
+        className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 p-2 rounded-full
         bg-purple-200  
         text-neutral-800  
         hover:scale-105 transition"
@@ -65,7 +65,7 @@ export default function Carousel({
       {/* Next */}
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full
+        className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 p-2 rounded-full
          bg-purple-200  
         text-neutral-800  
         hover:scale-105 transition"
