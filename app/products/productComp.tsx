@@ -29,9 +29,7 @@ const [searchQuery, setSearchQuery] = useState("");
       {/* Hero Section */}
       <section className="py-12 md:py-16 bg-linear-to-br from-secondary/20 via-background to-purple/20">
         <div className="container mx-auto px-4 text-center">
-          <span className="inline-block bg-secondary/20 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            🎮 Our Collection
-          </span>
+       
           <h1 className="text-4xl md:text-5xl font-fredoka font-bold mb-4">
             Explore Our <span className="text-secondary">Products</span>
           </h1>

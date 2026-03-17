@@ -54,7 +54,7 @@ function ProductCard({product, index, colors}:{product:any, index:number, colors
                       <div className="flex items-center justify-end mt-auto pt-4 border-t border-border/50">
                        <a 
                     href={`https://wa.me/+254758929927?text=${encodeURIComponent(
-                      `Sell me ${product.title}${getImageUrl(product.coverimage) ? `\nImage: ${product.coverimage}` : product.emoji}`
+                      `Sell me ${product.title}`
                     )}`}
                     target="_blank" 
                     rel="noopener noreferrer"

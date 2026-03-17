@@ -1,8 +1,10 @@
 "use client"
+import { getImageUrl } from '@/lib/sanity'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { Button } from '../ui/button'
  
-import whatsapp from "../../public/whatsapp.png"
+ 
 function HeroItem({product}:{product:any}) {
  
   const router = useRouter()
@@ -27,13 +29,21 @@ function HeroItem({product}:{product:any}) {
  </div>
 
             <div className="flex flex-wrap justify-end gap-4 pt-2">
-              <button className="rounded-md flex gap-1.5 bg-green-600 px-6 items-center font-semibold text-white hover:bg-green-700 transition">
-               <Image alt='whatapp logo' className='object-cover object-center '  width={20} height={20} src={whatsapp} /> Buy Now 
-              </button>
+               <a 
+                    href={`https://wa.me/+254758929927?text=${encodeURIComponent(
+                      `Sell me ${product.title}`
+                    )}`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" className="rounded-full bg-green-500 hover:bg-green-600 text-white font-bold">
+                      Buy on WhatsApp
+                    </Button>
+                  </a>
 
-              <button className="rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-700 hover:bg-gray-100 transition">
+              <Button size="lg" onClick={() => router.push(`/products/${product.slug}`)}  onFocus={() => router.push(`/products/${product.slug}`)} className="rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-700 hover:bg-gray-100 transition">
                 View Details
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -46,9 +56,10 @@ function HeroItem({product}:{product:any}) {
     loading="eager"
     
     onClick={() => router.push(`/products/${product.slug}`)}
+    onFocus={() => router.push(`/products/${product.slug}`)}
     width={1280}
     height={800}
-    src={product.coverimage}
+    src={getImageUrl(product.coverimage)!}
               alt="Mahogany Door"
               className=" object-cover h-[35dvh] md:h-[55dvh] object-center w-full rounded-xl shadow-xl"
             />

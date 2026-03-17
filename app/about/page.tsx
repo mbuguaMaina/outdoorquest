@@ -1,6 +1,7 @@
  
 import { Heart, Target,  Sparkles, Shield } from "lucide-react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 const values = [
   {
@@ -165,34 +166,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      {/* <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="inline-block bg-purple/10 text-purple px-4 py-1 rounded-full text-sm font-semibold mb-4">
-              👋 Meet the Team
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-fredoka font-bold">
-              The <span className="text-primary">Dreamers</span> Behind OutDoorQuest
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="bg-card rounded-2xl p-6 text-center shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 group"
-              >
-                <div className="w-24 h-24 rounded-full bg-linear-to-br from-primary/30 to-secondary/30 flex items-center justify-center mx-auto mb-4 group-hover:animate-wiggle">
-                  <span className="text-5xl">{member.emoji}</span>
-                </div>
-                <h3 className="font-fredoka text-lg font-bold text-foreground">{member.name}</h3>
-                <p className="text-sm text-muted-foreground">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+     
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-linear-to-r from-secondary via-purple to-pink">
@@ -203,12 +177,12 @@ const About = () => {
           <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
             Join thousands of families and spark fun, games, and outdoor adventures for your kids!
           </p>
-          <a
+          <Link
             href="/products"
             className="inline-block btn-playful bg-white text-foreground px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl"
           >
             Browse Our Collection 🎁
-          </a>
+          </Link>
         </div>
       </section>
     </>

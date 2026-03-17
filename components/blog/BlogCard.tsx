@@ -4,6 +4,8 @@
 import Link from "next/link";
 import { BlogPost } from "./sampledata";
 import Image from "next/image";
+import { get } from "http";
+import { getImageUrl } from "@/lib/sanity";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -25,7 +27,7 @@ const BlogCard = ({ post, featured = false }: BlogCardProps) => {
         width={800}
             priority={true}
             loading="eager"
-              src={post.image}
+              src={getImageUrl(post.image)!}
               alt={post.title}
               className="h-64 md:h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               
